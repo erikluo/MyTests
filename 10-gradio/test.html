@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Horizontal Layout Example</title>
+    <style>
+      .container {
+        display: flex;
+        align-items: center;
+      }
+      .userApp {
+        display: flex;
+        align-items: center;
+      }
+      .avatar {
+        /* width: .36rem;
+        height: .36rem; */
+        border-radius: 50%;
+        margin-right: .08rem;
+      }
+      .userInfo {
+          flex: 1;
+          display: flex;
+          flex-direction: column
+      }
+      .nameInfo {
+          display: flex;
+          align-items: center;
+          justify-content: space-between
+      }
+      .name {
+          display: flex;
+          align-items: center
+      }
+      .but {
+          font-size: .12rem;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: .24rem;
+          background: #6ae5fb;
+      }
+
+      p {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div  class="userApp">
+      <img data-v-33d680df="" src="data:image/png;base64,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" alt="" class="avatar">
+      <div data-v-33d680df="" class="userInfo">
+        <div data-v-33d680df="" class="nameInfo">
+          <div data-v-33d680df="" class="name"><span data-v-33d680df="">xxxx</span><img data-v-33d680df="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAnCAYAAABwtnr/AAAAAXNSR0IArs4c6QAABNNJREFUWEfNmE2P21QUht9rJ1UHxKLqb2E9DqI/AFVCM+1s2dM9kuMFv4JlP9VWqlo2SCDsbtjADiFWbLth0WFmEjvxx0Hnfjj+tuN4CpGiOIly8/jc97znnCtwDY/w8b2lTXTMS6e27R2dPgqm/hsx9YLbR6c+Msshs7IgCFAw9Q1MBh4+PXPsBD6IUITmwJClwkPCWkwV/UnA41dfL2n13kWWaEAAgtS1hs6vU3hH958sD93pg8EldHTpIo520HwlqA6tacmi4KMvny4OgT8IPH7zwKfVhYNkg06JlKKudgJAkM7J++SLZ6MSdxQ4RxlCuNiGoG2IkkS6os27kCctax7IbFqMgZfLUPjnkjbhsdzueA0KV2+tbBsk5+eYf/pVKSISejZzsY0U9H4SydWRa1/lgvfx3Wcl3V++OnH4i2wG+WoTpL3GR4l3687LQCjolStX3Kzlk7Z8AxEUHF+HAW0iYLNydp+H2EciUvOVaMv/LOaCDRkkIgXbmiep8ARd/e5TsnHaoSMg2YL4puRNbDCFRDrB+pKba0N2/htJaB3xWrTDCyCJd7KYViI7jy8kcNVKS5bK0hIogDdKJAKiFSiNgehKRTxN8oRsLTQViF6JVPy+TSKka4MC//sXH+GFU9f1BBKRQNr+hHKRQyXC0LyOyN795CNJ6uAfSCIyGc0OVaptTSJS+wDNKJDgtL4quIV2FCMRlgfLZIBEqhBTSUSuq7Ut17QpEOlfr5fYhtqXNfShLnKNEpFSawQfIREieDSnY5EJ6b+5rhtkwMWG5jhGCmdviXC0+WlxxP94vEQSu3lydkS7yUWKrSq3tmSnXMx0ASknZLVCXr4+UZnb1ZAVJaI1ngl4EpzWursz0GkibbCv0FgZBTfO6l3e+vmpD4HSMJFZqPUk/3x/srSI3Frrq83H6FppXEeb2wAGj3/9zhFI2RJHFZqb9540NmoMTxYcjmYTNMNcvTnxCZRLptVFCtAsQyKhweOV31XW2wqN7itaBwOGb2tdZRNlE99c/miqkCVn0jVBEC1UxMP3fl7WjUS4Wg7t/PacaoZCVyVikl6C85fJz99S3qKO7EVELAaNZAa65PmlubRSabUQi06Vg8c/Lqmz82ubH40jmMVtqvXVOyEAEtqCv6+LVO3VSnXE4x++IekiaaELNJncZ1fVXkQ0w+8D3SYRs0u3P3shZKx4dkQcO1Iu4+ZH1UOYyN+ggFJ4VgYnsxDI1xnc1snflHTTi1RcxOwaJ6+VIbj1+QulcTmOxZFbmx8HSqQI3SWDQyXCrDXwEUcMukWtVcfRw0GfRCR4Sgs5c5pt2D48Y2dvP4VqPmIoSaQ1oh07VxwOmjy76j6sb60ohS4PKlPh9jb7Q4begRONirAaxdqgi+BGJiVwfrN5eL+/6TEuMnAAGDI/DpFIUSY1cI66RZBHFflB5QeYH4dIBKnwbt95np+91BokhhdCwZf09T+RiOFq7OwMfLkBys/8Bs2IvRIZ4NlF+zPAneAmWWHryE8Y7b1cpCKPInznoSdHnuGv64hBgjQ0UXKnO6BryVndDvOeb4DmhUmlp6K2JXct2k3QVE7CNqa9jpm5UbJj4WY3CTzs1hJYhqLjQL/Bs3nwzUi85Z8WXaMNuFfjfT/8r7//Fw/PAlDe1bHUAAAAAElFTkSuQmCC" alt=""></div>
+          <div data-v-33d680df="" class="but" onclick="alert('hello world')">下载APP</div>
+        </div>
+        <div data-v-33d680df="" class="exp">我在xxxx创建了个ChatGPT小应用，赶紧来试试吧</div>
+      </div>
+    </div>
+  
+  </body>
+</html>
